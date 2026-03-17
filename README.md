@@ -1,14 +1,10 @@
 # Pose TF Broadcaster with MediaPipe and ROS 2
-# MediaPipe ve ROS 2 ile Pose TF Broadcaster
 
-This project uses **MediaPipe Pose** to detect human body landmarks from a webcam feed and publishes selected points as **TF transforms** in **ROS 2**.  
-Bu proje, web kameradan alınan görüntü üzerinde **MediaPipe Pose** kullanarak insan vücut noktalarını tespit eder ve seçilen noktaları **ROS 2** ortamında **TF dönüşümleri** olarak yayınlar.
+This project uses **MediaPipe Pose** to detect human body landmarks from a webcam feed and publishes selected points as **TF transforms** in **ROS 2**.
 
 ---
 
-## English
-
-### Overview
+## Overview
 This ROS 2 node captures frames from a webcam, processes them with MediaPipe Pose, and broadcasts selected body landmarks as TF frames.
 
 Currently, the following landmarks are published:
@@ -25,7 +21,7 @@ Parent frame:
 
 ---
 
-### Features
+## Features
 - Real-time webcam capture
 - Human pose estimation using MediaPipe
 - TF broadcasting in ROS 2
@@ -34,7 +30,7 @@ Parent frame:
 
 ---
 
-### Technologies Used
+## Technologies Used
 - **Python**
 - **ROS 2**
 - **MediaPipe**
@@ -45,7 +41,7 @@ Parent frame:
 
 ---
 
-### How It Works
+## How It Works
 1. The webcam captures live video frames.
 2. MediaPipe Pose detects human body landmarks.
 3. Selected landmarks are converted into ROS-compatible coordinates.
@@ -53,7 +49,7 @@ Parent frame:
 
 ---
 
-### Coordinate Mapping
+## Coordinate Mapping
 MediaPipe provides normalized coordinates in the range of approximately `0-1`.  
 These values are transformed into a ROS coordinate system using a simple scaling method.
 
@@ -67,7 +63,7 @@ For real-world robotic applications, additional calibration may be required.
 
 ---
 
-### Requirements
+## Requirements
 Make sure the following are installed:
 
 - ROS 2
@@ -82,8 +78,11 @@ ROS 2 Python packages:
 
 ---
 
-### Run
-After placing the script inside your ROS 2 package, run:
+## Run
+
+This project currently includes the main Python script for the ROS 2 node.
+
+After integrating it into a ROS 2 Python package, you can run it with:
 
 ```bash
-ros2 run <your_package_name> <your_node_name>
+ros2 run pose_tf pose_tf_broadcaster
